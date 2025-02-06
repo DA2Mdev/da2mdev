@@ -1,17 +1,18 @@
+use yew_router::prelude::*;
 use yew::prelude::*;
-mod components;
-use components::{
-    great::Great,
+mod router;
+mod pages;
+use router::{
+    Route,
+    switch
 };
 
 #[function_component]
-
 fn App() -> Html {
-
   html! {
-    <div>
-      <Great />
-    </div>
+    <BrowserRouter>
+      <Switch<Route> render={switch} />
+    </BrowserRouter>
   }
 }
 
