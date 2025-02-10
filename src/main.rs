@@ -1,21 +1,21 @@
+use router::{switch, Route};
+pub use yew::prelude::*;
 use yew_router::prelude::*;
-use yew::prelude::*;
-mod router;
+
+pub use web_sys;
+mod components;
 mod pages;
-use router::{
-    Route,
-    switch
-};
+mod router;
 
 #[function_component]
 fn App() -> Html {
-  html! {
-    <BrowserRouter>
-      <Switch<Route> render={switch} />
-    </BrowserRouter>
-  }
+    html! {
+      <BrowserRouter>
+        <Switch<Route> render={switch} />
+      </BrowserRouter>
+    }
 }
 
 fn main() {
-  yew::Renderer::<App>::new().render();
+    yew::Renderer::<App>::new().render();
 }

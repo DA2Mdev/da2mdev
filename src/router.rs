@@ -1,8 +1,6 @@
+use crate::pages::home::Home;
 use yew::{html, Html};
 use yew_router::prelude::*;
-use crate::pages::{
-    home::Home,
-};
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {
@@ -16,6 +14,6 @@ pub enum Route {
 pub fn switch(routes: Route) -> Html {
     match routes {
         Route::Home => html! {<Home />},
-        Route::NotFound => html! { <h1>{"404"}</h1> }
+        Route::NotFound => html! { <h1>{"404"}</h1> },
     }
 }

@@ -4,5 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+wasm-bindgen = "0.2.100"
+web-sys = { version = "0.3.77", features = ["console","Document","HtmlElement","MouseEvent","DomRect"] }
 yew = { git = "https://github.com/yewstack/yew", features = ["csr"] }
 yew-router = { git = "https://github.com/yewstack/yew.git" }
+
