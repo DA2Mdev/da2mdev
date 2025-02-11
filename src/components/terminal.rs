@@ -1,5 +1,5 @@
 use crate::router::Route;
-use web_sys::HtmlInputElement;
+use web_sys::{HtmlInputElement, Window};
 use yew::{
     function_component, html, use_effect_with, use_node_ref, use_state, Callback, Html,
     KeyboardEvent,
@@ -12,6 +12,8 @@ pub fn Terminal() -> Html {
     let input_terminal_clone = input_terminal.clone();
     let logs = use_state(|| Vec::<String>::new());
     let navigation = use_navigator().unwrap();
+
+    let window = web_sys::window();
 
     use_effect_with((), move |_| {
         let input_clone = &input_terminal_clone.clone();
@@ -43,6 +45,7 @@ pub fn Terminal() -> Html {
                         "clear" => logs_clone.set(Vec::<String>::new()),
                         "cd .." => navigation_clone.push(&Route::Mode),
                         "cd /view/standard" => navigation_clone.push(&Route::Standard),
+                        "exit" => navigation_clone.push(&Route::Mode),
                         _ => {
                             new_logs.push(input_node.value());
                             logs_clone.set(new_logs);
