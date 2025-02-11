@@ -10,9 +10,11 @@ mod router;
 #[function_component]
 fn App() -> Html {
     html! {
+      <main class="w-screen h-screen bg-zinc-100 dark:bg-zinc-900 grid text-zinc-900 dark:text-zinc-100">
       <BrowserRouter>
         <Switch<Route> render={switch} />
       </BrowserRouter>
+      </main>
     }
 }
 

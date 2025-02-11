@@ -1,11 +1,10 @@
-use crate::components::terminal::Terminal;
 use yew::{function_component, html, Html};
 
 #[function_component]
-pub fn Home() -> Html {
+pub fn HomeStandard() -> Html {
     html! {
       <div class="w-screen h-screen bg-zinc-100 dark:bg-zinc-900 grid items-center">
-        <div class="text-zinc-900 dark:text-zinc-100 mx-25">
+        <div class="mx-25">
           <h1 class="text-6xl flex flex-row items-center my-5">
             {"David Maestre"}
             <div class="flex flex-row gap-x-2 bg-zinc-900 dark:bg-zinc-100 ml-5 p-1 rounded-full">
@@ -33,7 +32,6 @@ pub fn Home() -> Html {
               {"Hola mundo, mi nombre es David Maestre, soy un pequeño programador apasionado por la tecnologia ..."}
             </p>
           </div>
-          <Terminal/>
         </div>
       </div>
     }
