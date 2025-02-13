@@ -100,6 +100,7 @@ dependencies = [
 name = "front-end"
 version = "0.1.0"
 dependencies = [
+ "gloo",
  "wasm-bindgen",
  "web-sys",
  "yew",
